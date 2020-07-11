@@ -1,0 +1,629 @@
+
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600";
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+	font-family: 'Muli', sans-serif;
+}
+.header_painel {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #22996b;
+    position: fixed;
+    height: 60px!important;
+    overflow: hidden;
+    z-index: 10;
+    color: #fff;
+}
+.header_painel h4{
+    margin-left: 5%;
+    color: rgb(255, 254, 254);
+}
+.header_painel h3{
+    margin-left: 5%;
+    color: rgb(255, 254, 254);
+}
+.header_painel a{
+    color:white;
+    text-decoration: none;
+}
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+.mainInner{
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.mainInner div{
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+
+/* BARRA FUNC */
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    right:0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #299455 0%, #3e4c91 100%);
+}
+
+.sidebarMenuInner{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+/* BARRA GESTOR */
+
+.header_painel_gestor {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #226399;
+    position: fixed;
+    height: 60px!important;
+    overflow: hidden;
+    z-index: 10;
+    color: #fff;
+}
+.header_painel_gestor h4{
+    margin-left: 5%;
+    color: rgb(255, 254, 254);
+}
+.header_painel_gestor h3{
+    margin-left: 5%;
+    color: rgb(255, 254, 254);
+}
+
+.header_painel_gestor a{
+    color:white;
+    text-decoration: none;
+}
+#sidebarMenu_gestor {
+    height: 100%;
+    position: fixed;
+    right:0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #226399 0%, #913e7c 100%);
+}
+.sidebarMenuInner_gestor{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner_gestor li{
+    list-style: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner_gestor li span{
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner_gestor li a{
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu_gestor {
+    transform: translateX(0);
+}
+
+
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    right: 25px;
+    height: 22px;
+    width: 22px;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+
+/* PAINEL FUNCIONARIO */
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+
+
+.projeto_func {
+    font-family: 'Muli', sans-serif;
+	background-color: rgb(235, 235, 235);
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    display: flex;
+	margin: 5%;
+	overflow: hidden;
+    width: 80%;
+    height: 100%;
+    max-height: 150px;    
+}
+
+.projeto_func h6 {
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    margin-top: -10PX;
+}
+
+.projeto_func h4 {
+	letter-spacing: 1px;
+    margin-top: -20PX;
+    color:rgb(10, 141, 76);
+}
+
+.projeto_func_preview {
+	background-color: #2db87eb7;
+    color: #fff;
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 160px;
+    width: 140%;
+    height: 200px;
+}
+.projeto_func_preview h2{
+    margin: 0%;
+    margin-top: -5px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.projeto_func_preview h6{
+    color: rgb(255, 255, 255);
+    margin-bottom: 5%;
+    margin-top: -5px;
+    
+}
+
+.projeto_func_info {
+    padding-top: 30px;
+
+    width: 100%;
+    height: 100%;
+}
+
+#projeto_nome{
+    color:white;
+}
+.btn {
+	background-color: #3f265f;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 10px;
+	padding: 12px 25px;
+	bottom: 10%;
+	right: 15%;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Icon */
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    
+}
+
+    .icon:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none !important;
+    }
+
+    .icon > .label {
+        display: none;
+    }
+
+
+
+
+
+    /* tabela */
+
+    
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+  table a {
+    color:red;
+    text-decoration: NONE;
+  }
+  
+  table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 900px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  /* POPUP CADASTRO HORAS */
+  
+#popup{
+	background-color: rgba(0, 0,0, 0.6);
+	width: 100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.popup-content{
+	height: 400px;
+    width:80%;
+    max-width: 500px;
+	background: rgb(235, 235, 235);
+	padding:10px;
+	border-radius: 5px;
+	position:relative;
+}
+.popup-content h4{
+    padding-left: -20%;
+    margin-top:1%;
+}
+#fechar_popup{
+    margin-top: -1%;
+	position: absolute;
+	margin-left: 35%;
+	height: 30px;
+	width: 30px;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+
+.input_registro{
+    width: 70%;
+    margin-top: -25px;
+    padding: 10px;
+    color:rgb(73, 78, 73);
+}
+#insere_registro{
+    margin:10px;
+}
+/* BOTAO VERDE PARA ALOCAR FUNCIONARIO NO PROJETO */
+#alocar{
+    background-color: rgb(51, 160, 51);
+    color: rgb(51, 160, 51);
+    width: 10%;
+}
+#alocar a{
+    color:rgb(255, 255, 255);
+}
+#alocar2{
+    background-color: rgb(51, 160, 51);
+    color: rgb(51, 160, 51);
+}
+#alocar2 a{
+    color:rgb(255, 255, 255);
+}
+
+/* POPUP PARA ALOCAR FUNCIONARIO */
+
+#popup_aloca{
+	background-color: rgba(0, 0,0, 0.6);
+	width: 100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.popup-content_aloca{
+	height: 400px;
+    width:80%;
+    max-width: 1200px;
+	background: rgb(235, 235, 235);
+	padding:10px;
+	border-radius: 5px;
+	position:relative;
+}
+.popup-content_aloca h4{
+    padding-left: -20%;
+    margin-top:1%;
+}
+#fechar_popup_aloca{
+    margin-top: -1%;
+	position: absolute;
+	margin-left: 35%;
+	height: 30px;
+	width: 30px;
+    cursor: pointer;
+    padding-right: 10px;
+}
+.input_registro_aloca{
+    width: 70%;
+    margin-top: -25px;
+    padding: 10px;
+    color:rgb(73, 78, 73);
+}
+#insere_registro_aloca{
+    margin:10px;
+}
+
+/* Formulario para atualizar dados */
+
+form {
+    margin: 0 0 0 0;
+}
+
+    form .field {
+        margin-bottom: 1.5em;
+    }
+
+        form .field.half {
+            display: inline-block;
+            width: 50%;
+        }
+
+            form .field.half.first {
+                margin-right: 0%;
+            }
+
+    @media screen and (max-width: 980px) {
+
+        form .field.half {
+            display: block;
+            width: 100%;
+        }
+
+            form .field.half.first {
+                margin-right: 0;
+            }
+
+    }
+
+label {
+    color: #555;
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0 0 0 0;
+}
+
+input[id="name"],
+input[id="dt_nascimento"],
+input[id="cargo"],
+input[id="descr"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: #eff0ef;
+    border-radius: 5px;
+    border: none;
+    border: solid 2px #687a71;
+    color: rgb(78, 77, 77);
+    display: block;
+    
+    padding: 0 1em;
+    text-decoration: none;
+    width: 70%;
+    height: 35px;
+}
+
+    input[type="text"]:invalid,
+    input[type="password"]:invalid,
+    input[type="email"]:invalid,
+    input[type="tel"]:invalid,
+    select:invalid,
+    textarea:invalid {
+        box-shadow: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #4bae77;
+        box-shadow: 0 0 0 1px #4bae77;
+    }
